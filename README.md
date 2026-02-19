@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🖥️ Task Management System - Frontend
 
-## Getting Started
+Frontend application for the Task Management System built with **Next.js, TypeScript, and TailwindCSS**.
 
-First, run the development server:
+This application allows:
+- User Registration & Login
+- Admin Dashboard
+- User Management
+- Task Assignment
+- Profile Management
+- Secure Authentication (Cookies-based)
+
+---
+
+## 🚀 Tech Stack
+
+- Next.js 14 (App Router)
+- TypeScript
+- TailwindCSS
+- Axios
+- React Context API
+- React Hot Toast
+- React Icons
+
+---
+
+## 📂 Project Structure
+
+src/
+│
+├── app/ # Next.js pages
+├── components/ # Reusable components
+├── context/ # User & Task Context
+├── hooks/ # Custom hooks
+├── utils/ # Icons & helpers
+
+
+---
+
+## ⚙️ Environment Setup
+
+Create a `.env.local` file in root:
+
+NEXT_PUBLIC_SERVER_URL=http://localhost:8000
+
+
+---
+
+## 🛠️ Installation
+
+Clone the repository:
 
 ```bash
+git clone https://github.com/YOUR_USERNAME/frontend-repo.git
+cd frontend-repo
+Install dependencies:
+
+npm install
+Run development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+App will run on:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+http://localhost:3000
+🔐 Authentication Flow
+Login uses HTTP-only cookies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Axios configured with withCredentials: true
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Backend must allow CORS with credentials enabled
 
-## Learn More
+Example axios config:
 
-To learn more about Next.js, take a look at the following resources:
+axios.defaults.withCredentials = true;
+👨‍💼 Admin Features
+Admin can:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+View all users
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Delete users
 
-## Deploy on Vercel
+Assign tasks
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+View tasks in card layout
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Register new users via modal
+
+Admin routes depend on backend:
+
+/api/v1/admin/*
+🎨 UI Features
+Modern Tailwind UI
+
+Modal-based user creation
+
+Card-based task display
+
+Profile edit modal
+
+Password change support
+
+Dark mode
+
